@@ -49,8 +49,8 @@ resource "aws_instance" "Instance1" {
 resource "aws_eip" "myFirstInstance" {
   vpc      = true
   instance = aws_instance.Instance1.id
-  user_data = << EOF
-		#! /bin/bash
+  user_data = <<EOF
+		#!/bin/bash
     sudo apt-get update
 		sudo apt-get install -y apache2
 		sudo systemctl start apache2
