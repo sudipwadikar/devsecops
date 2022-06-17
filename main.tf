@@ -43,7 +43,7 @@ resource "aws_instance" "Instance1" {
     user_data= <<EOF
       #!/bin/bash
       sudo apt-get update
-      sudo apt-get install apache2
+      sudo apt-get install apache2 > /home/ubuntu/logs.txt
  	EOF
   tags= {
     Name = var.tag_name
