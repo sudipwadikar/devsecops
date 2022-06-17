@@ -40,10 +40,10 @@ resource "aws_instance" "Instance1" {
   key_name = var.key_name
   instance_type = var.instance_type
   security_groups= [var.security_group]
-  user_data = << EOF
-    #!/bin/bash
-    sudo apt-get update
-    sudo apt-get install apache2
+    user_data= <<EOF
+      #!/bin/bash
+      sudo apt-get update
+      sudo apt-get install apache2
  	EOF
   tags= {
     Name = var.tag_name
