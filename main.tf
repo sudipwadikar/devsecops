@@ -40,6 +40,11 @@ resource "aws_instance" "Instance1" {
   key_name = var.key_name
   instance_type = var.instance_type
   security_groups= [var.security_group]
+  user_data = <<EOF
+  #!/bin/bash
+  sudo apt-get install docker
+  cat /etc/hosts > /home/ubuntu/test.txt
+  EOF
   tags= {
     Name = var.tag_name
   }
